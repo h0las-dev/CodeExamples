@@ -1,0 +1,20 @@
+add rectangle Rectangle_1 (2, 2) (3, 3)
+add polygon Rectangle_2
+add point (0, 0)
+add point (0, 1)
+add point (1, 1)
+add point (1, 0)
+end polygon
+add circle Circle_1 (-1, -1) radius 2
+group Rectangle_1, Rectangle_2, Circle_1 as firstGroup
+print area for firstGroup
+move firstGroup (10, 2)
+print area for firstGroup
+rotate firstGroup 45
+print area for firstGroup
+copy firstGroup to secondGroup
+print area for secondGroup
+print area for scene
+delete secondGroup
+delete firstGroup
+print circumscribing rectangle for scene

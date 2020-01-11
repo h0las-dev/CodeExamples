@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C95478BF-EA15-4A36-90AD-0551A2453C4E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scene2d</RootNamespace>
+    <AssemblyName>Scene2d</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Circle.cs" />
+    <Compile Include="CommandBuilders\AddCircleCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\AddPolygonCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\AddRectangleCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\CircRectangleCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\CommandProducer.cs" />
+    <Compile Include="CommandBuilders\AreaCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\CopyCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\DeleteCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\GroupCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\MoveCommandBuilder.cs" />
+    <Compile Include="CommandBuilders\RotateFigureCommandBuilder.cs" />
+    <Compile Include="Commands\AddFigureCommand.cs" />
+    <Compile Include="Commands\AddGroupCommand.cs" />
+    <Compile Include="Commands\AddPolygonCommand.cs" />
+    <Compile Include="Commands\AreaFigureCommand.cs" />
+    <Compile Include="Commands\AreaSceneCommand.cs" />
+    <Compile Include="Commands\CircRectangleCommand.cs" />
+    <Compile Include="Commands\CircSceneRectangleCommand.cs" />
+    <Compile Include="Commands\CopyFigureCommand.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="Commands\CopySceneCommand.cs" />
+    <Compile Include="Commands\DeleteFigureCommand.cs" />
+    <Compile Include="Commands\DeleteSceneCommand.cs" />
+    <Compile Include="Commands\MoveFigureCommand.cs" />
+    <Compile Include="Commands\MoveSceneCommand.cs" />
+    <Compile Include="CommandBuilders\ReflectFigureCommandBuilder.cs" />
+    <Compile Include="Commands\ReflectFigureCommand.cs" />
+    <Compile Include="Commands\ReflectSceneCommand.cs" />
+    <Compile Include="Commands\RotateFigureCommand.cs" />
+    <Compile Include="Commands\RotateSceneCommand.cs" />
+    <Compile Include="Exceptions\BadCircleRadiusExeption.cs" />
+    <Compile Include="Exceptions\BadFormatException.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="CommandBuilders\ICommandBuilder.cs" />
+    <Compile Include="Exceptions\BadNameExeption.cs" />
+    <Compile Include="Exceptions\BadPolygonPointExeption.cs" />
+    <Compile Include="Exceptions\BadPolygonPointNumberExeption.cs" />
+    <Compile Include="Exceptions\BadRectanglePointExeption.cs" />
+    <Compile Include="Exceptions\NameDoesAlreadyExistExeption.cs" />
+    <Compile Include="Exceptions\UnexpectedEndOfPolygonExeption.cs" />
+    <Compile Include="Figures\CircleFigure.cs" />
+    <Compile Include="Figures\CompositeFigure.cs" />
+    <Compile Include="Figures\ICompositeFigure.cs" />
+    <Compile Include="Figures\IFigure.cs" />
+    <Compile Include="Figures\PolygonFigure.cs" />
+    <Compile Include="Figures\RectangleFigure.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Scene.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

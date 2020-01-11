@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Polynomial</name>
+    </assembly>
+    <members>
+        <member name="M:PolynomialLib.Polynomial.#ctor(System.Int32)">
+            <summary>
+            Create a polynomial of a given degree
+            </summary>
+            <param name="degree">degree of polynomial</param>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.#ctor(System.Double[])">
+            <summary>
+            Create a polynomial by params
+            </summary>
+            <param name="coefficients">coefficients of polynomial</param>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.#ctor(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Create a polynomial by array
+            </summary>
+            <param name="coeffArray">array of coefficients</param>
+        </member>
+        <member name="P:PolynomialLib.Polynomial.GetCoeffArray">
+            <summary>
+            Get coefficients
+            </summary>
+        </member>
+        <member name="P:PolynomialLib.Polynomial.Degree">
+            <summary>
+            Get Degree
+            </summary>
+        </member>
+        <member name="P:PolynomialLib.Polynomial.Item(System.Int32)">
+            <summary>
+            Access by index
+            </summary>
+            <param name="i">index of coefficient</param>
+            <returns>coefficient[i]</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.op_Addition(PolynomialLib.Polynomial,PolynomialLib.Polynomial)">
+            <summary>
+            Overload Operation Addition
+            </summary>
+            <param name="polynom1">polynimial1</param>
+            <param name="polynom2">polynomial2</param>
+            <returns>polynomial1 + polynomial2</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.op_Subtraction(PolynomialLib.Polynomial,PolynomialLib.Polynomial)">
+            <summary>
+            Overload Operation Subtraction
+            </summary>
+            <param name="polynom1">polynimial1</param>
+            <param name="polynom2">polynomial2</param>
+            <returns>polynomial1 - polynomial2</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.op_Multiply(PolynomialLib.Polynomial,System.Double)">
+            <summary>
+            Overload Operation Multiplication
+            </summary>
+            <param name="polynom1">polynimial</param>
+            <param name="constValue">constant value</param>
+            <returns>polynomial * constant value</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.op_Multiply(PolynomialLib.Polynomial,PolynomialLib.Polynomial)">
+            <summary>
+            Overload Operation Multiplication
+            </summary>
+            <param name="polynom1">polynimial1</param>
+            <param name="polynom2">polynimial2</param>
+            <returns>polynomial * polynimial2</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.Differentiate(PolynomialLib.Polynomial)">
+            <summary>
+            Get the derivative
+            </summary>
+            <param name="polynom">polynomial</param>
+            <returns>d(polynomial)</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.Integrate(PolynomialLib.Polynomial)">
+            <summary>
+            Get the Integral
+            </summary>
+            <param name="polynom">polynomial</param>
+            <returns>Integr(polynomial)</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.Solve(PolynomialLib.Polynomial,System.Double[])">
+            <summary>
+            Get an array of values from an array of arguments
+            </summary>
+            <param name="polynom">polynomial</param>
+            <param name="x">array of arguments</param>
+            <returns>array of values</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.GetRoot(PolynomialLib.Polynomial,System.Double,System.Double)">
+            <summary>
+            Get the root on a segment
+            </summary>
+            <param name="polynom">polynomial</param>
+            <param name="a">left border</param>
+            <param name="b">right border</param>
+            <returns>root</returns>
+        </member>
+        <member name="M:PolynomialLib.Polynomial.ToString">
+            <summary>
+            Convert a polynomial to a string
+            </summary>
+            <returns>polynomial(a0 + a1*x + a2*x^2 + ... an*x^n)</returns>
+        </member>
+    </members>
+</doc>

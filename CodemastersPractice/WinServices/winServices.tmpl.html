@@ -1,0 +1,59 @@
+﻿<div class="container full-height">
+    <div class="panel-default">
+        <div class="panel-heading">
+         <div class="row">
+             <div class="col-sm-12">
+                 <h3 class="clearfix page-title">Windows services list</h3>
+             </div>
+         </div>
+     </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="">
+                    <div class="doc-list" disable-on-progress indicator="vm.loadingIndicator">
+                        <table class="table table-hover table-bordered logs-table">
+                            <tbody>
+                                <tr>
+                                    <th class="services-th-halign-center">
+                                        <p>Name</p>
+                                    </th>
+                                    <th class="services-th-halign-center">
+                                        <p>Change service status</p>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="service in vm.services">
+                                    <td class="services-td-halign-center">
+                                        {{::service.name}}
+                                    </td>
+                                    <td>
+                                        <select name="Statuses"
+                                                ng-model="service.selectedStatus"
+                                                ng-options="potStatus as potStatus.description for potStatus in service.potentialStatus track by potStatus.id"
+                                                ng-change="vm.updateWinServices($event, service)"
+                                                ng-click="vm.rememberServiceState(service)"
+                                                class="form-control">
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr ng-if="!vm.services || vm.services.length == 0">
+                                    <td class="logs-td-halign-center">No services found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="pull-right">
+                    <input type="button"
+                           class="btn btn-default"
+                           ng-click="vm.loadWinServices()"
+                           ng-disabled="vm.loadingIndicator.inProgress"
+                           value="Reload services"/>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
